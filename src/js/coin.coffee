@@ -46,8 +46,8 @@ window.accountLogin = ->
   return false
 
 Coin.start
-  key:       'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzIsImp0aSI6Im8yVEtwTUJRRERVIiwic3ViIjoiVjFRVFp4RFM2ViJ9.OUApzGKj5Y2mFVpaRPFfMAUMQM1-0NEAODDvTCGGeJJlBNbHKQ-8cjJ2i7qIpjCtAa_ZG6-iO6LlHKenAVGyxQ'
-  endpoint:  'http://localhost:8081'
+  key:       'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjIwLCJqdGkiOiJqVDFNbHJkREdKYyIsInN1YiI6ImoyVHpEeHBkaFIifQ.I3zRYk_zMlLWLeHuwD94SqRl1Exn7veKyYneSV_qBOAcJRIw9bu9ORyqFKrUxzPTbcro_b6BiPrq54WU2rwV3w'
+  endpoint:  'https://api-dot-crowdstart-staging.appspot.com'
   processor: 'ethereum'
   currency:  'eth'
   mode: 'deposit'
