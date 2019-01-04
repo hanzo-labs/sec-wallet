@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deposit-2-(Dark)" transform="translate(-53.000000, -467.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M59.79625,467.79625 L59.79625,478.96625 L54.91625,474.08625 C54.52625,473.69625 53.88625,473.69625 53.49625,474.08625 C53.10625,474.47625 53.10625,475.10625 53.49625,475.49625 L60.08625,482.08625 C60.47625,482.47625 61.10625,482.47625 61.49625,482.08625 L68.08625,475.49625 C68.47625,475.10625 68.47625,474.47625 68.08625,474.08625 C67.69625,473.69625 67.06625,473.69625 66.67625,474.08625 L61.79625,478.96625 L61.79625,467.79625 C61.79625,467.24625 61.34625,466.79625 60.79625,466.79625 C60.24625,466.79625 59.79625,467.24625 59.79625,467.79625 Z" id="Shape" transform="translate(60.791250, 474.587500) rotate(90.000000) translate(-60.791250, -474.587500) "></path>
+        </g>
+    </g>
+</svg>

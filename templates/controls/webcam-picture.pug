@@ -1,0 +1,8 @@
+.image(onclick='{ openCamera }')
+  img.picture(src='{ value || "/img/blue-camera.svg" }')
+  canvas.snapshot(class='{ snapshotted: !!value && showVideo }')
+  .camera-controls.columns(if='{ showVideo }')
+    .button.take-snapshot(if='{ !value }'  onclick='{ snapshot }') Take Picture
+    .button.retry-snapshot(if='{ !!value }'  onclick='{ retry }') Retry
+    .button.accept-snapshot(if='{ !!value }' onclick='{ closeCamera }') Accept
+  .label { label }

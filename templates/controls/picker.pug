@@ -1,0 +1,9 @@
+.picks
+  #{ 'yield' }
+    .pick(
+      each='{ pickOption, id in pickerOptions }'
+      onclick='{ pick(id) }'
+      class='{ picked: isPicked(id) }'
+    )
+      .pick-title { pickOption.title }
+      .pick-subtitle { pickOption.subtitle }

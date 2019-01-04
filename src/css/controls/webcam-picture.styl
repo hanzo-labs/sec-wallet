@@ -1,0 +1,38 @@
+webcam-picture
+  .image
+    text-align: center
+
+    img
+    .label
+      cursor: pointer
+
+    img
+      width: 90%
+      border-radius: 2px
+
+  video
+    position: fixed
+    top: 50%
+    transform: translateY(-50%)
+    left: 0
+    width: 100%
+    z-index: 1000
+
+  canvas
+    display: none
+    position: fixed
+    top: 50%
+    transform: translateY(-50%)
+    left: 0
+    z-index: 900
+
+    &.snapshotted
+      display: block
+
+  .camera-controls
+    z-index: 2000
+    position: fixed
+    margin: 0 auto
+    bottom: 1rem
+    left: 50%
+    transform: translateX(-50%)

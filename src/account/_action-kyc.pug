@@ -1,0 +1,51 @@
+action-kyc
+  .form(if='{ !submitted}')
+    h3 Please verify your identity.
+    span.
+      Because Hanzo interacts directly with your bank, regulators have asked
+      that we collect identity information. Your data is cryptographically
+      secured and sent only to Hanzo's banking endpoint.
+    br
+    br
+    span PERSON DETAILS
+    .m-card
+      text.input(bind='user.firstName' placeholder='First Name')
+      text.input(bind='user.lastName' placeholder='Last Name')
+      text.input(bind='user.kyc.phone' placeholder='Primary Phone Number')
+      text.input(bind='user.kyc.birthdate' placeholder='Birthdate')
+      selection.input(bind='user.kyc.gender' select-options='{ genderOpts }' placeholder='Gender')
+
+    span PRIMARY ADDRESS
+    .m-card
+      text.input(bind='user.kyc.address.line1' placeholder='Street Address')
+      text.input(bind='user.kyc.address.line2' placeholder='Apartment / Suite #')
+      .columns
+        text.flex2.input(bind='user.kyc.address.city' placeholder='City')
+        text.input(bind='user.kyc.address.postalCode' placeholder='Postal Code')
+      .columns
+        address-country.flex2.input(bind='user.kyc.address.country' placeholder='Country')
+        address-state.input(bind='user.kyc.address.state' country-field='user.kyc.address.country' placeholder='State')
+
+    span TAX ID (EIN/SSN)
+    .m-card
+      text.input(bind='user.kyc.taxId' placeholder='Tax ID')
+
+    span PHOTO IDS
+    .m-card.photo-ids
+      span Upload Images
+      .columns
+        webcam-picture(bind='user.kyc.documents.0', label='Add Profile Photo')
+        webcam-picture(bind='user.kyc.documents.1', label='Front of a Valid ID')
+        webcam-picture(bind='user.kyc.documents.2', label='Back of a Valid ID')
+
+    button(onclick='{ submit }') CONTINUE
+  .confirmed(if='{ submitted }')
+    .big-icon
+      img(src='/img/big-check.svg')
+
+    h3.action-instruction Your identity is being verified!
+
+    button(onclick='{ end }')
+      | CONTINUE
+
+

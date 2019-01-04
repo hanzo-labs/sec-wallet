@@ -1,0 +1,57 @@
+.ust-transactions
+  h1
+    color: $ustColor
+
+  .m-card
+    margin-bottom: .5rem
+    padding: 1rem
+
+    .columns
+      align-items: flex-start
+      flex-direction: row !important
+
+    .left
+      text-align: left
+
+    .right
+      text-align: right
+      align-items: flex-end
+
+    .dest
+    .date
+    .time
+      color: $textDarkColor
+
+    .type
+      position: relative
+
+    &.deposit
+      .type:after
+        content: ''
+        display: block
+        width: 2rem
+        height: 2rem
+        background-image: url('/img/deposit-green.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        position: absolute
+        bottom: -2.5rem
+        left: 0
+
+    &.redeem
+      .type:after
+        content: ''
+        display: block
+        width: 2rem
+        height: 2rem
+        background-image: url('/img/redeem-red.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        position: absolute
+        bottom: -2.5rem
+        left: 0
+
+  .back-link
+    color: $white
+    cursor: pointer
+

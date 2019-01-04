@@ -1,0 +1,88 @@
+action-deposit
+  .big-icon(if='{ step != 5 }')
+    img(src='/img/big-deposit.svg')
+
+  .big-icon(if='{ step == 5 }')
+    img(src='/img/big-check.svg')
+
+  .step-1(if='{ step == 1 }')
+    h3.action-instruction Select a Bank Account.
+    picker(
+      bind='deposit.bank'
+      picker-options='{ bankOptions }'
+    )
+      .m-card.bank.pick(
+        each='{ pickOption, id in pickerOptions }'
+        onclick='{ pick(id) }'
+        class='{ picked: isPicked(id) }'
+      )
+        .pick-title { pickOption.title }
+        .pick-subtitle { pickOption.subtitle }
+
+    plaid
+      .m-card.add-bank(onclick='{ addBank }')
+        .add-bank-text Add a Bank Account
+
+    button(onclick='{ next }')
+      | SELECT TOKEN
+
+  .step-2(if='{ step == 2 }')
+    h3.action-instruction Select a Token.
+    picker(
+      bind='deposit.token'
+      picker-options='{ tokenOptions }'
+    )
+      .m-card.token.pick(
+        each='{ pickOption, id in pickerOptions }'
+        onclick='{ pick(id) }'
+        class='{ picked: isPicked(id) }'
+      )
+        .pick-title { pickOption.title }
+        .pick-subtitle { pickOption.subtitle }
+
+    .button-group
+      button.back(onclick='{ back }')
+        img(src='/img/back.svg')
+      button(onclick='{ next }')
+        | SELECT ADDRESS
+
+  .step-3(if='{ step == 3 }')
+    h3.action-instruction Select an Address.
+    picker(
+      bind='deposit.address'
+      picker-options='{ addressOptions }'
+    )
+      .m-card.address.pick(
+        each='{ pickOption, id in pickerOptions }'
+        onclick='{ pick(id) }'
+        class='{ picked: isPicked(id) }'
+      )
+        .pick-image
+          img(riot-src='{ pickOption.img }')
+        .pick-title { pickOption.title }
+        .pick-subtitle { pickOption.subtitle }
+
+    .button-group
+      button.back(onclick='{ back }')
+        img(src='/img/back.svg')
+      button(onclick='{ next }')
+        | SELECT AMOUNT
+
+  .step-4(if='{ step == 4 }')
+    h3.action-instruction Select Amount.
+    currency.m-card.input(bind='deposit.amount', placeholder = '0.00', currency='usd')
+      span.mini { getTokens() } Hanzo UST based on Net Asset Value
+
+    .button-group
+      button.back(onclick='{ back }')
+        img(src='/img/back.svg')
+      button(onclick='{ next }')
+        | CONFIRM PURCHASE
+
+  .step-5(if='{ step == 5 }')
+    h3.action-instruction Your transaction is being processed.
+
+    button(onclick='{ end }')
+      | CONTINUE
+
+

@@ -1,0 +1,10 @@
+lib/
+coverage/
+node_modules/
+npm-debug.log
+package-lock.json
+public/js/app.js
+*.map
+.sake/
+public/account/index.html
+public/css/app.css

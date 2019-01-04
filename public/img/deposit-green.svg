@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-(Dark)-Copy" transform="translate(-31.000000, -383.000000)" fill="#1DE2A0" fill-rule="nonzero">
+            <path d="M37.5925,384 L37.5925,395.17 L32.7125,390.29 C32.3225,389.9 31.6825,389.9 31.2925,390.29 C30.9025,390.68 30.9025,391.31 31.2925,391.7 L37.8825,398.29 C38.2725,398.68 38.9025,398.68 39.2925,398.29 L45.8825,391.7 C46.2725,391.31 46.2725,390.68 45.8825,390.29 C45.4925,389.9 44.8625,389.9 44.4725,390.29 L39.5925,395.17 L39.5925,384 C39.5925,383.45 39.1425,383 38.5925,383 C38.0425,383 37.5925,383.45 37.5925,384 Z" id="Shape" transform="translate(38.587500, 390.791250) scale(1, -1) translate(-38.587500, -390.791250) "></path>
+        </g>
+    </g>
+</svg>

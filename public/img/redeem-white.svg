@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deposit-2-(Dark)" transform="translate(-55.000000, -646.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Bottom-Navigation" transform="translate(0.000000, 642.000000)">
+                <path d="M61.5925,5 L61.5925,16.17 L56.7125,11.29 C56.3225,10.9 55.6825,10.9 55.2925,11.29 C54.9025,11.68 54.9025,12.31 55.2925,12.7 L61.8825,19.29 C62.2725,19.68 62.9025,19.68 63.2925,19.29 L69.8825,12.7 C70.2725,12.31 70.2725,11.68 69.8825,11.29 C69.4925,10.9 68.8625,10.9 68.4725,11.29 L63.5925,16.17 L63.5925,5 C63.5925,4.45 63.1425,4 62.5925,4 C62.0425,4 61.5925,4.45 61.5925,5 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

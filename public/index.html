@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Hanzo Platform">
+    <!-- Facebook-->
+    <meta property="og:title" content="Hanzo Platform">
+    <meta property="og:description" content="Hanzo Platform">
+    <meta property="og:site_name" content="Hanzo Platform">
+    <meta property="og:url" content="https://hanzo.ai">
+    <meta property="og:type" content="product">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image">
+    <meta property="fb:app_id">
+    <!-- Twitter-->
+    <meta name="twitter:title" content="Hanzo Platform">
+    <meta name="twitter:description" content="Hanzo Platform">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:image">
+    <meta name="twitter:url" content="https://hanzo.ai">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+    <link rel="/icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+    <link rel="/icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+    <link rel="/icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+    <link rel="/icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+    <link rel="/icon" type="image/png" href="/icon/favicon-128.png" sizes="128x128">
+    <meta name="application-name" content="&amp;nbsp;">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="/icon/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="/icon/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="/icon/mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="/icon/mstile-310x310.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#33edc1">
+    <meta name="theme-color" content="#ffffff">
+    <!-- link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU' crossorigin='anonymous')-->
+    <link rel="stylesheet" href="/css/app.css" type="text/css">
+    <title>Hanzo Platform
+    </title><!--[if lt IE 10]>
+    <script src="/js/polyfill/html5-shiv.js"></script><![endif]-->
+  </head>
+  <body id="index">
+    <!-- Header-->
+    <input id="show-mobile-menu" type="checkbox">
+    <!-- The scrollable body goes here-->
+    <!-- This exists to support optional css parallax-->
+    <!-- import css/parallax/parallax.styl to enable it-->
+    <main class="parallax">
+      <hero class="hero columns">
+        <login class="content flex-center">
+          <h2>Login</h2><a class="gray" href="#" onclick="{ accountRegister }">Create your account</a>
+          <div class="m-card inputs">
+            <user-email class="input required" placeholder="Email"></user-email>
+            <user-password class="input required" placeholder="Password"></user-password>
+          </div>
+          <div class="error" if="{ errorMessage }">{ errorMessage }</div>
+          <checkbox bind="user.rememberMe">
+            <label for="checkbox-2"></label>
+          </checkbox>
+          <p>
+            Remember me on this device.
+            
+          </p>
+          <button class="input" type="submit">LOGIN</button>
+        </login>
+      </hero>
+    </main>
+    <privacy-popup>
+    </privacy-popup><!--[if IE]>
+    <div class="browserupgrade"></div>
+    <p>
+      You are using an strong outdated  browser. Please
+      a(href='http://browsehappy.com/') upgrade your browser to improve
+      your experience and security.
+    </p><![endif]-->
+    <script src="/js/app.js?v=#{ version }"></script>
+    <script>
+      !function(t,e,a){var
+      r,n,c,i,o,s,l,u;if(null==t.analytics){for(r=[],r.methods=["ab","alias","group","identify","off","on","once","page","pageview","ready","track","trackClick","trackForm","trackLink","trackSubmit"],l=r.methods,c=function(t){r[t]=function(){var
+      e;return
+      e=Array.prototype.slice.call(arguments),e.unshift(t),r.push(e),r}},i=0,o=l.length;o>i;i++)s=l[i],c(s);return
+      u=e.createElement("script"),u.async=!0,u.type="text/javascript",u.src=a,n=e.getElementsByTagName("script")[0],n.parentNode.insertBefore(u,n),t.analytics=r}}(window,document,"//cdn.hanzo.io/a/yoursite.js");
+    </script>
+  </body>
+</html>

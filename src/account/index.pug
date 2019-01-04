@@ -1,0 +1,107 @@
+extends ../_layout.pug
+
+block vars
+  - var pageId = 'account'
+
+block header
+block footer
+
+block content
+  profile
+    hero.hero.columns(if='{ !hasPk }')
+      include ./_mnemonic-confirm.pug
+    .dash(if='{ hasPk }')
+      .dash-header
+        .left
+          .logo(onclick='{ router.addFn("Account", "#account") }')
+            img.logo-image(src='/img/logo.svg', alt='Hanzo')
+        .middle
+        .right
+          selection.currency.input(
+            bind='ui.currency'
+            select-options='{ currencyOpts }')
+          .settings-header
+            input#settings-open(type='checkbox')
+            label.settings-button(for='settings-open')
+              img(src='/img/user-circle.svg')
+              // | Hello { data.get('user.firstName') }
+            .m-card.settings-menu
+              .m-card-body
+                span(onclick='{ logout }') Logout
+      .dash-sub-header
+        span DRAFT - Subject to Revision
+      .dash-body.rows(if='{ router.get().page == "#account" }')
+        h3.
+          Hello, { data.get('user.firstName') }
+        h3.
+          Here’s what your tokens have been doing.
+        h3(onclick='{ router.addFn("KYC", "#kyc") }').
+          Check your identify verification status.
+        br
+        span.portfolio-balance
+          | PORTFOLIO BALANCE:
+        h1.
+          $2,676.40
+        .blockchain-values
+          span.eth-value.blockchain-value
+            | $2000.40
+          span.eos-value.blockchain-value
+            | $676.00
+
+        .columns.token-cards
+          .rows
+            .m-card.token-card(onclick='{ router.addFn("USDT Coin", "#ust-transactions") }')
+              span.token-symbol UST
+              h1.token-count 1.00
+              div.token-name Hanzo UST
+              p.token-value $1.00
+          .rows
+
+      .dash-body.rows(if='{ router.get().page == "#kyc" }')
+        include ./_action-kyc.pug
+
+      .dash-body.rows(if='{ router.get().page == "#deposit" }')
+        include ./_action-deposit.pug
+
+      .dash-body.rows(if='{ router.get().page == "#send" }')
+        include ./_action-send.pug
+
+      .dash-body.rows(if='{ router.get().page == "#redeem" }')
+        include ./_action-redeem.pug
+
+      .dash-body.rows(if='{ router.get().page == "#ust-transactions" }')
+        include ./_ust-transactions.pug
+
+      .dash-sub-footer
+        a.white(href='/p118183n2.htm' target='_blank') View Prospectus
+      .dash-footer
+        footer-menu.buttons.columns
+          .deposit-button.rows(
+            tabindex='0'
+            class='{ selected: isPage("deposit") }'
+            onclick='{ deposit }'
+          )
+            .icon
+              img(src='/img/deposit-blue.svg')
+              img(src='/img/deposit-white.svg')
+            span Purchase
+          .send-button.rows(
+            tabindex='0'
+            class='{ selected: isPage("send") }'
+            onclick='{ send }'
+          )
+            .icon
+              img(src='/img/send-blue.svg')
+              img(src='/img/send-white.svg')
+            span Send
+          .redeem-button.rows(
+            tabindex='0'
+            class='{ selected: isPage("redeem") }'
+            onclick='{ redeem }'
+          )
+            .icon
+              img(src='/img/redeem-blue.svg')
+              img(src='/img/redeem-white.svg')
+            span Redeem
+
+

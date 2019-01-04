@@ -1,0 +1,30 @@
+action-kyc
+  h3
+    color: $white
+
+  .columns
+    flex-direction: row !important
+
+  .input.input.input.input.input:not(button)
+    border-bottom: 1px solid $borderDarkColor
+
+  .columns
+    .input.input.input.input.input:not(button):not(:first-child)
+      border-left: 1px solid $borderDarkColor
+
+  .photo-ids
+    padding: 1.5rem 0 3rem
+    text-align: center
+
+    & > span
+      font-size: 1.25rem
+
+    .columns
+      margin-top: 1rem
+      align-items: flex-end
+
+  img
+    max-width: 200px
+
+  button
+    width: 100%

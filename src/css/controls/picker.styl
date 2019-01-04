@@ -1,0 +1,42 @@
+picker
+  display: table
+  width: 100%
+
+  .picks
+    .pick
+      padding: 1rem
+      position: relative
+      cursor: pointer
+      transition: all ($transitionTime * .5) ease-in-out
+      margin-bottom: .25rem
+
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        width: 2rem
+        height: 2rem
+        background-image: url('/img/picker-check.svg')
+        background-size: cover
+        right: 1rem
+        top: 50%
+        transform: translateY(-50%)
+        opacity: 0
+
+      &.picked
+        background-color: $pickerPickedColor
+
+        .pick-title
+        .pick-subtitle
+          color: $white
+
+        &:after
+          opacity: 1
+
+      .pick-title
+        color: $white
+        font-size: 1rem
+
+      .pick-subtitle
+        color: $textDarkColor
+        font-size: .875rem

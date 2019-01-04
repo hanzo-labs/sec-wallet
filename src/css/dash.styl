@@ -1,0 +1,140 @@
+.dash
+  display: flex
+  flex-direction: column
+
+  & > *
+    +above($pageWidth + 1)
+      padding-left: 'calc((100% - %s) / 2)' % $pageWidth
+      padding-right: 'calc((100% - %s) / 2)' % $pageWidth
+    +below($pageWidth)
+      padding-left $spacing * 4
+      padding-right $spacing * 4
+
+.dash-header
+.dash-sub-header
+.dash-sub-footer
+.dash-footer
+  display: flex
+  flex-direction: row
+
+  & > *
+    flex: 1
+    display: flex
+
+.dash-header
+  // mShadowed(1.5, $mDropShadowCardColor)
+  // background-color: $hanzoIndigo
+
+  align-items: center
+  padding-top: $spacing * 3
+  padding-bottom: $spacing * 3
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+
+  z-index: 1
+
+.dash-sub-header
+  position: absolute
+  width: 100vw
+  top: 4.5rem
+  text-align: center
+  z-index: 2000
+
+  span
+    display: block
+
+.dash-body
+  padding-top: $spacing * 4
+  padding-bottom: $spacing * 4
+  // background-color: $grey100
+  height: 100vh
+  max-height: 100vh
+  display: block
+  width: 100vw
+  padding-top: 110px
+  padding-bottom: 98px
+  overflow: scroll
+
+  .m-card
+  .m-table
+    margin-bottom: $spacing * 3
+
+  & > .columns
+    width: 100%
+
+    +above($tabletWidth + 1)
+      align-items: flex-start
+
+      & > *
+        margin: 0 $spacing * 2
+
+    +below($tabletWidth + 1)
+      & > *
+        margin: $spacing * 2 0
+        width: 100%
+
+  .m-card
+    .m-table
+      margin-bottom: 0
+
+.dash-sub-footer
+  position: absolute
+  bottom: 78px
+  left: 0
+  width: 100vw
+  display: block
+  text-align: center
+
+  a
+    display: block
+    font-size: .75rem
+
+.dash-footer
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100vw
+  height: 70px
+  background-color: $dashFooterDarkColor
+
+  .columns
+    flex-direction: row !important
+
+  .buttons
+    *
+      transition: all $transitionTime linear
+
+    & > *
+      cursor: pointer
+
+      .icon
+        position: relative
+
+        img
+          &:first-child
+            opacity: 1
+
+          &:last-child
+            position: absolute
+            left: 0
+            top: 1px
+            opacity: 0
+
+      &:focus
+      &:hover
+      &.selected
+        span
+          color: $white
+
+        img
+          &:first-child
+            opacity: 0
+
+          &:last-child
+            opacity: 1
+
+  .withdraw-button
+    .icon
+      transform: rotate(180deg)

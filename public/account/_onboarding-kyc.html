@@ -1,0 +1,36 @@
+
+<onboarding-kyc-form>
+  <div class="form-section">
+    <div class="input-group">
+      <text bind="user.name"></text>
+    </div>
+    <div class="input-group">
+      <phone bind="user.metadata.phone"></phone>
+    </div>
+    <div class="input-group">
+      <date bind="user.metadata.birthdate"></date>
+      <selection bind="user.metadata.gender" opts="{ genderOpts }"></selection>
+    </div>
+  </div>
+  <div class="form-section">
+    <div class="input-group">
+      <text bind="user.billingAddress.line1"></text>
+    </div>
+    <div class="input-group">
+      <text bind="user.billingAddress.line2"></text>
+    </div>
+    <div class="input-group">
+      <text bind="user.billingAddress.city"></text>
+      <text bind="user.billingAddress.postalCode"></text>
+    </div>
+    <div class="input-group">
+      <address-country bind="user.billingAddress.country"></address-country>
+      <address-state bind="user.billingAddress.state"></address-state>
+    </div>
+  </div>
+  <div class="form-section">
+    <div class="input-group">
+      <button>Continue</button>
+    </div>
+  </div>
+</onboarding-kyc-form>

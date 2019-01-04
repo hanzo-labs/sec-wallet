@@ -1,0 +1,89 @@
+action-redeem
+  .big-icon.big-redeem(if='{ step != 5 }')
+    img(src='/img/big-redeem.svg')
+
+  .big-icon(if='{ step == 5 }')
+    img(src='/img/big-check.svg')
+
+  .step-1(if='{ step == 1 }')
+    h3.action-instruction Select a Token.
+    picker(
+      bind='redeem.token'
+      picker-options='{ tokenOptions }'
+    )
+      .m-card.token.pick(
+        each='{ pickOption, id in pickerOptions }'
+        onclick='{ pick(id) }'
+        class='{ picked: isPicked(id) }'
+      )
+        .pick-title { pickOption.title }
+        .pick-subtitle { pickOption.subtitle }
+
+    button(onclick='{ next }')
+      | SELECT ADDRESS
+
+  .step-2(if='{ step == 2 }')
+    h3.action-instruction Select an Address.
+    picker(
+      bind='redeem.address'
+      picker-options='{ addressOptions }'
+    )
+      .m-card.address.pick(
+        each='{ pickOption, id in pickerOptions }'
+        onclick='{ pick(id) }'
+        class='{ picked: isPicked(id) }'
+      )
+        .pick-image
+          img(riot-src='{ pickOption.img }')
+        .pick-title { pickOption.title }
+        .pick-subtitle { pickOption.subtitle }
+
+    .button-group
+      button.back(onclick='{ back }')
+        img(src='/img/back.svg')
+      button(onclick='{ next }')
+        | SELECT AMOUNT
+
+  .step-3(if='{ step == 3 }')
+    h3.action-instruction Select Amount.
+    text.m-card.input(bind='redeem.amount', placeholder = '0.00')
+      span.mini Estimated ${ getFiat() } USD based on Net Asset Value
+
+    .button-group
+      button.back(onclick='{ back }')
+        img(src='/img/back.svg')
+      button(onclick='{ next }')
+        | SELECT BANK
+
+  .step-4(if='{ step == 4 }')
+    h3.action-instruction Select a Bank Account.
+    picker(
+      bind='redeem.bank'
+      picker-options='{ bankOptions }'
+    )
+      .m-card.bank.pick(
+        each='{ pickOption, id in pickerOptions }'
+        onclick='{ pick(id) }'
+        class='{ picked: isPicked(id) }'
+      )
+        .pick-title { pickOption.title }
+        .pick-subtitle { pickOption.subtitle }
+
+    plaid
+      .m-card.add-bank(onclick='{ addBank }')
+        .add-bank-text Add a Bank Account
+
+    .button-group
+      button.back(onclick='{ back }')
+        img(src='/img/back.svg')
+      button(onclick='{ next }')
+        | CONFIRM REDEMPTION
+
+  .step-5(if='{ step == 5 }')
+    h3.action-instruction
+      | Your redemption is scheduled for Monday, December 31, 2018.
+
+    button(onclick='{ end }')
+      | CONTINUE
+
+

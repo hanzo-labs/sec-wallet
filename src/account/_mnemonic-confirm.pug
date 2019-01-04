@@ -1,0 +1,27 @@
+mnemonic-confirm
+  .mnemonic-1(if='{ step == 1 }')
+    h2 Back up your Hanzo Account
+    span.
+      Hanzo does not store your unencrypted account. Copy your recovery code somewhere safe, you must have them to recover your
+      account.
+    .m-card.inputs
+      h3.mnemonic-text { getMnemonic() }
+    .buttons.row
+      copy.input(text='{ getMnemonic }')
+        button.copy-button(class='{ copied: copied }' onclick='{ copy }') COPY
+      button(onclick='{ entryStep }') NEXT
+    br
+    p.
+      You will be asked to re-enter your recovery code on the next step to finish setting up your account.
+    .buttons
+  .mnemonic-2(if='{ step == 2 }')
+    h2 Almost Done
+    span Enter your recovery code to finish setting up your Hanzo account.<br><br>
+    .m-card.inputs
+      h3.mnemonic-text { getMnemonic() }
+      textbox.input.required(bind='mnemonic.confirm', placeholder='Recovery Code')
+    .error(if='{ errorMessage }') { errorMessage }
+    .buttons.row
+      button(class='{ copied: copied }' onclick='{ resetStep }') BACK
+      button(onclick='{ submit }') FINISH
+

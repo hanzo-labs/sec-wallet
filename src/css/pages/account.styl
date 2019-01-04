@@ -1,0 +1,303 @@
+#account
+  .parallax
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      width: 100vw
+      height: 4rem
+      top: 0
+      left:0
+      background-color: $dashMenuDarkColor
+      z-index: 100
+      pointer-events: none
+
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      width: 100vw
+      height: 8rem
+      top: 4rem
+      left:0
+      background: linear-gradient(to bottom, rgba(19,21,30,1) 0%,rgba(19,21,30,.25) 50%,rgba(19,21,30,0) 100%)
+      z-index: 100
+      pointer-events: none
+
+  .dash-footer
+    z-index: 100
+
+  hero
+    z-index: 300
+    position: relative
+
+  profile
+    width: 100vw
+    padding-left: 0 !important
+    padding-right: 0 !important
+
+    .logo
+      flex: 1
+
+      img
+        max-height: 36px
+
+      .logo-image
+        display: block
+        cursor: pointer
+
+    input[type=checkbox]
+      display: none
+
+    .dash-header
+      z-index: 200
+
+      .middle
+        flex: 0
+
+      .right
+        justify-content: flex-end
+
+    .settings-header
+      display: flex
+      flex-direction: row
+      align-items: center
+      color: $white
+      justify-content: flex-end
+      position: relative
+
+      & > *
+        margin-left: $spacing
+
+      *
+        color: $white
+
+      img
+        height: 2.25rem
+        width: 2.25rem
+
+    .currency
+      max-width: 56px
+      margin: 0 $spacing 0 0
+      border-bottom: 0
+      padding: 0
+
+      select
+        border: 0 !important
+        border-bottom: 0
+        color: $white
+
+      .select-indicator
+        color: $white
+        right: 0
+        top: 1rem
+
+    .settings-menu
+      position: absolute
+      display: block
+      right: 0
+      top: 3rem
+      max-height: 0
+      transition: max-height $transitionTime ease-in-out, opacity $transitionTime ease-in-out
+      color: $white
+      cursor: pointer
+      opacity: 0
+      width: auto
+
+    input:checked ~ .settings-menu
+    .settings-button:hover ~ .settings-menu
+    .settings-menu:hover
+      max-height: 100px
+      opacity: 1
+
+    .portfolio-balance
+      font-size: .75rem
+
+    .token-cards
+      margin-top: 2rem
+      flex-direction: row !important
+
+      & > *
+        margin-left: .25rem
+        margin-right: .25rem
+
+      .token-card
+        padding: 1rem
+        margin-bottom: .5rem
+        background: linear-gradient(to bottom, #373C53 0%, #272B3F 100%)
+        cursor: pointer
+
+        .token-count
+          color: $ustColor
+          margin-top: 1rem
+
+        .token-symbol
+          padding: .5rem
+          background-color: $backgroundDarkColor
+          border-radius: 2px
+
+        .token-value
+          margin-bottom: 0
+          font-size: .875rem
+          margin-top: 1em
+
+        .token-name
+          padding-bottom: 1rem
+          border-bottom: 1px solid $borderDarkColor
+
+    .kyc-status
+      .m-card-body
+        text-align: center
+
+        p
+        h3
+          margin: 0
+
+        .green
+          color: $green500
+
+        .red
+          color: $red500
+
+    .deposit-withdraw
+      .m-card-body
+        display: flex
+
+        & > *
+          flex: 1
+          padding: .5rem
+
+          &:first-child
+            padding-left: 0
+          &:last-child
+            padding-right: 0
+
+      button
+        width: 100%
+
+    .balance-counter
+      .m-table-row
+        cursor: pointer
+
+    .transaction-balance
+      h3
+        text-align: center
+
+    .big-icon
+      text-align: center
+
+    .action-instruction
+      color: $white
+      text-align: center
+      margin-top: 2rem
+      margin-bottom: 1rem
+
+    .blockchain-values
+      .blockchain-value
+        padding-left: 1rem
+        padding-right: .5rem
+        position: relative
+
+      .eth-value:before
+        content: ''
+        display: block
+        position: absolute
+        width: 1rem
+        height: 1rem
+        background-image: url(/img/eth-logo-blue.svg)
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        top: 0
+        left: 0
+
+      .eos-value:before
+        content: ''
+        display: block
+        position: absolute
+        width: 1rem
+        height: 1rem
+        background-image: url(/img/eos-logo-blue.png)
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        top: 0
+        left: 0
+
+    mnemonic-confirm
+      max-width: 600px
+      padding: 0 1rem
+
+      .inputs
+        margin-top: 1.5rem
+        margin-bottom: 1.5rem
+
+        h3
+          line-height: 3rem
+          word-spacing: 1rem
+          padding: .5rem 1rem
+          color: white
+
+      copy
+        width: auto
+        padding: 0
+        display: inline-block
+
+        input
+          display: none
+        .copy-text
+          display: none
+
+        .copy-button
+          &:after
+            content: ''
+            height: 1.5rem
+            width: 1.5rem
+            display: block
+            position: absolute
+            left: 0.35rem
+            top: 0.75rem
+            background-image: url(/img/green-checkmark.svg)
+            background-repeat: no-repeat
+            background-size: cover
+            pointer-events:none
+            opacity: 0
+            transition: opacity ($transitionTime * .5) ease-in-out
+
+          &.copied:after
+            opacity: 1
+
+      .mnemonic-2
+        .error
+          margin-bottom: 1.5rem
+
+        .inputs
+          position: relative
+
+          h3
+            opacity: 0
+            pointer-events:none
+
+        textbox
+          padding: .5rem 1rem 1px
+          border: 0
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+
+        .input-container
+          height: 100%
+
+        textarea
+          line-height: 3rem
+          word-spacing: 1rem
+          padding: 0
+          color: $white
+          font-size: 1.5rem
+          margin: 0
+          text-align: center
+          position: relative
+          left: 1px
+          height: 100%
+

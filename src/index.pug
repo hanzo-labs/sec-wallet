@@ -1,0 +1,27 @@
+extends _layout.pug
+
+block vars
+  - var pageId = 'index'
+
+block header
+block footer
+
+block content
+  hero.hero.columns
+    login.content.flex-center
+      h2 Login
+      a.gray(href='#' onclick='{ accountRegister }') Create your account
+      .m-card.inputs
+        user-email.input.required(placeholder='Email')
+        user-password.input.required(placeholder='Password')
+      .error(if='{ errorMessage }')
+        | { errorMessage }
+
+      checkbox(bind='user.rememberMe')
+        label(for='checkbox-2')
+
+      p.
+        Remember me on this device.
+
+      button.input(type='submit')
+        | LOGIN

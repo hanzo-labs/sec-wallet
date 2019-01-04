@@ -1,0 +1,36 @@
+extends _layout.pug
+
+block vars
+  - var pageId = 'signup'
+
+block header
+block footer
+
+block content
+  hero.hero.columns
+    register.content.flex-center(immediate-login='true')
+      h2 Create your Account
+      a.gray(href='#' onclick='{ accountLogin }') Already have an account?
+
+      .signup-type.columns
+        .individual INDIVIDUAL
+        .institution INSTITUTION
+
+      .m-card.inputs
+        user-name.input.required(placeholder='Name')
+        user-email.input.required(placeholder='Email')
+        user-password.input.required(placeholder='Password')
+        user-password-confirm.input.required(placeholder='Retype Password')
+      // recaptcha(sitekey='6Ldp8mQUAAAAAKfBJ8OxNgvvMkNxvQhbnFfYVO-D')
+      .error(if='{ errorMessage }')
+        | { errorMessage }
+
+      checkbox(bind='user.over18')
+        label(for='checkbox-4')
+
+      p.
+        I certify that I am 18 years of age or older, and <br>
+        I agree to the <a class='white' href='#'>User Agreement</a> and <a class='white' href='#'>Privacy Policy</a>.
+
+      button.input(type='submit')
+        | CREATE ACCOUNT
