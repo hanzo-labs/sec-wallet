@@ -1,11 +1,11 @@
 url = 'https://hanzo.ai'
 
 name = """
-  Hanzo Platform
+  Hanzo Wallet
   """
 
 description = """
-  Hanzo Platform
+  Hanzo Wallet
   """
 
 twitter =
