@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/hanzoai/sec-wallet#readme",
   "devDependencies": {
-    "autoprefixer": "9.3.1",
+    "autoprefixer": "9.4.4",
     "bebop": "1.15.1",
     "clean-css": "4.2.1",
     "coffeescript": "2.3.2",
@@ -50,11 +50,11 @@
     "stylus": "0.54.5"
   },
   "dependencies": {
-    "aes-js": "3.1.1",
+    "aes-js": "3.1.2",
     "astley.js": "0.0.58",
     "broken": "0.1.13",
     "coin.js": "1.0.24",
-    "ethers": "4.0.7",
+    "ethers": "4.0.20",
     "express": "4.16.4"
   }
 }
