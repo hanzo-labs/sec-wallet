@@ -1,4 +1,4 @@
-export ETH_ENDPOINT         = '//ropsten.infura.io/v3/958e65c93beb4e90abf0e627f2079d7b'
+export ETH_ENDPOINT         = 'wss://ropsten.infura.io/ws'
 export ETH_CONTRACT_ADDRESS = '0x945f873d71b0f497d71a05d25c7bf5e7547ab826'
 export ETH_NODE             = '//api.infura.io/v1/jsonrpc/ropsten'
 
