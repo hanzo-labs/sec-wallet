@@ -18,6 +18,7 @@ import './containers/footer-menu'
 import Coin from 'coin.js/src'
 import Router from './router'
 import store from 'akasha'
+import { HANZO_KEY, HANZO_ENDPOINT, ETH_CONTRACT_ADDRESS, ETH_NODE } from './constants'
 
 window.router = r = new Router
 
@@ -46,16 +47,16 @@ window.accountLogin = ->
   return false
 
 Coin.start
-  key:       'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjIwLCJqdGkiOiJqVDFNbHJkREdKYyIsInN1YiI6ImoyVHpEeHBkaFIifQ.I3zRYk_zMlLWLeHuwD94SqRl1Exn7veKyYneSV_qBOAcJRIw9bu9ORyqFKrUxzPTbcro_b6BiPrq54WU2rwV3w'
-  endpoint:  'https://api-dot-crowdstart-staging.appspot.com'
+  key:       HANZO_KEY
+  endpoint:  HANZO_ENDPOINT
   processor: 'ethereum'
   currency:  'eth'
   mode: 'deposit'
   order:
     subtotal:  1e9
   eth:
-    address: '0x945f873d71b0f497d71a05d25c7bf5e7547ab826'
-    node:    '//api.infura.io/v1/jsonrpc/ropsten'
+    address: ETH_CONTRACT_ADDRESS
+    node:    ETH_NODE
 
 data = Coin.getData()
 
