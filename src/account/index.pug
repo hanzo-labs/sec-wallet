@@ -28,8 +28,8 @@ block content
             .m-card.settings-menu
               .m-card-body
                 span(onclick='{ logout }') Logout
-      .dash-sub-header
-        span DRAFT - Subject to Revision
+      // .dash-sub-header
+      //   span DRAFT - Subject to Revision
       .dash-body.rows(if='{ router.get().page == "#account" }')
         h3.
           Hello, { data.get('user.firstName') }
