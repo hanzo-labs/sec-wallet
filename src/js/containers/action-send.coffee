@@ -19,7 +19,7 @@ class ActionSendForm extends El.Form
   tokenOptions:
     ust:
       title: 'Hanzo UST'
-      subtitle: '1 ($1.00)'
+      subtitle: '2,825.40 ($2,825.40)'
 
   addressOptions: {}
 
@@ -32,11 +32,11 @@ class ActionSendForm extends El.Form
       eth:
         img: '/img/eth-logo.svg'
         title: store.get 'ethAddress'
-        subtitle: '1 ($1.00)'
+        subtitle: '2149.40 ($2149.40)'
       eos:
         img: '/img/eos-logo.png'
         title: store.get 'eosAddress'
-        subtitle: '0 (0)'
+        subtitle: '676.00 (676.00)'
 
     super arguments...
 
