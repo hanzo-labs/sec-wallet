@@ -39,7 +39,7 @@ class MnemonicConfirm extends El.Form
 
   newMnemonic: ->
     # @mnemonic = ethers.HDNode.entropyToMnemonic ethers.utils.randomBytes(16)
-    @mnemonic = 'antique knee act powder leopard frame undo very true output lottery olympic'
+    @mnemonic = 'good lottery carpet report chapter model digital mosquito divert battle nuclear candy'
 
   _submit: ->
     @errorMessage = ''

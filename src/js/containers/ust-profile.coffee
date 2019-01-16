@@ -1,5 +1,6 @@
 import ProfileForm from 'shop.js/src/containers/profile'
 import Events from 'shop.js/src/events'
+import contract from '../ustContract'
 import aes from 'aes-js'
 
 import store from 'akasha'
@@ -34,6 +35,17 @@ class USTProfile extends ProfileForm
       if @hasPk && !@decoded
         @decodePk()
         @decoded = true
+
+      if @decoded
+        addr = store.get('ethAddress')
+        contract.methods.balanceOf addr
+          .call()
+          .then (results) =>
+            @data.set 'ethBalance', results
+            @scheduleUpdate()
+          .catch (err) ->
+            console.log 'Error', err
+
       @scheduleUpdate()
 
     super arguments...
@@ -57,7 +69,7 @@ class USTProfile extends ProfileForm
     # Convert our bytes back into text
     pk = aes.utils.utf8.fromBytes(decryptedBytes)
 
-    eth = ethers.Wallet.fromMnemonic(pk, "m/44'/60'/0'/0/0").address
+    eth = ethers.Wallet.fromMnemonic(pk, "m/44'/60'/0'/0/1").address
     eos = ethers.Wallet.fromMnemonic(pk, "m/44'/194'/0'/0/0").address.replace('0x', 'EOS')
 
     store.set 'ethAddress', eth
