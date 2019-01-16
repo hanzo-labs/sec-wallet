@@ -20,6 +20,9 @@ import Router from './router'
 import store from 'akasha'
 import { HANZO_KEY, HANZO_ENDPOINT, ETH_CONTRACT_ADDRESS, ETH_NODE } from './constants'
 
+# services
+import { updateBalance } from './services'
+
 window.router = r = new Router
 
 window.logout = ->
@@ -98,4 +101,6 @@ r.onUpdate = ->
 #     @data.set 'user.name', firstName + ' ' + lastName
 
 #     Coin.El.scheduleUpdate()
-#
+
+updateBalance(data, Coin.El.scheduleUpdate)
+

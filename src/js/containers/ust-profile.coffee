@@ -1,6 +1,5 @@
 import ProfileForm from 'shop.js/src/containers/profile'
 import Events from 'shop.js/src/events'
-import contract from '../ustContract'
 import aes from 'aes-js'
 
 import store from 'akasha'
@@ -35,17 +34,6 @@ class USTProfile extends ProfileForm
       if @hasPk && !@decoded
         @decodePk()
         @decoded = true
-
-      if @decoded
-        addr = store.get('ethAddress')
-        contract.methods.balanceOf addr
-          .call()
-          .then (results) =>
-            @data.set 'ethBalance', results
-            @scheduleUpdate()
-          .catch (err) ->
-            console.log 'Error', err
-
       @scheduleUpdate()
 
     super arguments...

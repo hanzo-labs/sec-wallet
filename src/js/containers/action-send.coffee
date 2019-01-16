@@ -32,11 +32,15 @@ class ActionSendForm extends El.Form
       eth:
         img: '/img/eth-logo.svg'
         title: store.get 'ethAddress'
-        subtitle: '2149.40 ($2149.40)'
+        subtitle: '...'
       eos:
         img: '/img/eos-logo.png'
         title: store.get 'eosAddress'
         subtitle: '676.00 (676.00)'
+
+    @on 'update', =>
+      amount = @renderCurrency 'usd', @data.get('ethBalance')
+      @addressOptions.eth.subtitle = amount.substr(1) + ' (' + amount + ')'
 
     super arguments...
 
