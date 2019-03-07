@@ -35,7 +35,7 @@ block content
           Hello, { data.get('user.firstName') }
         h3.
           Here’s what your tokens have been doing.
-        h3(onclick='{ router.addFn("KYC", "#kyc") }').
+        h3.kyc(onclick='{ router.addFn("KYC", "#kyc") }').
           Check your identify verification status.
         br
         span.portfolio-balance
